@@ -1,0 +1,21 @@
+<h2>Add Task</h2>
+
+<form (submit)="onAddTask()">
+  <fieldset>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" placeholder="Task Name" [(ngModel)]="name" name="name">
+    </div>
+
+    <div class="form-check">
+
+      <label for="done" class="form-check-label">
+        <input type="checkbox" class="form-check-input" id="done" [(ngModel)]="done" name="done">
+
+        Completed</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Task</button>
+
+  </fieldset>
+</form>

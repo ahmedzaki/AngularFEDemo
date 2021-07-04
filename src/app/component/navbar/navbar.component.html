@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">Angular Interface</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item active">
+            <a class="nav-link" [routerLink]="['/']">Home </a>
+          </li>
+          <li *ngIf="_service.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item active">
+            <a class="nav-link" [routerLink]="['/main']">Main </a>
+          </li>
+          <li *ngIf="!_service.isLoggedIn()" [routerLinkActive]="['active']"  class="nav-item">
+            <a class="nav-link" [routerLink]="['/login']">Login</a>
+          </li>
+          <li *ngIf="!_service.isLoggedIn()" [routerLinkActive]="['active']"  class="nav-item">
+            <a class="nav-link" [routerLink]="['/register']">Register</a>
+          </li>
+        </ul>
+        <div class="mt-2 mt-md-0">
+          <li *ngIf="_service.isLoggedIn()" class="nav-item">
+            <a href="#" class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </div>
+      </div>
+    </nav>
